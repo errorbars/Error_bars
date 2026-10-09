@@ -1,0 +1,38 @@
+{#- Reusable story card. variant: "light" (white card) or "dark" (on black). -#}
+{% macro card(post, variant="light", showDek=false) %}
+{%- set sub = post.data.subject | subject -%}
+<article class="card card--{{ variant }}" style="--subject: {{ sub.color }}; --subject-ink: {{ sub.ink }};">
+  <a href="{{ post.url }}">
+    <div class="card__media">
+      <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" width="1600" height="1000" loading="lazy">
+    </div>
+    <div class="card__body">
+      <p class="kicker">{{ sub.name }}</p>
+      <h3 class="card__title">{{ post.data.title }}</h3>
+      {% if showDek and post.data.dek %}<p class="card__dek">{{ post.data.dek }}</p>{% endif %}
+      <span class="card__read">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>
+        Read
+      </span>
+    </div>
+  </a>
+</article>
+{% endmacro %}
+
+{% macro product(item, compact=false) %}
+<article class="product">
+  <img src="{{ item.image }}" alt="{{ item.name }}" width="1000" height="1000" loading="lazy">
+  <div class="product__body">
+    <h3 class="product__name">{{ item.name }}</h3>
+    <p class="product__price">{{ item.price }}</p>
+    {% if not compact %}
+    <p class="product__desc">{{ item.description }}</p>
+    {% if item.link %}
+    <a class="btn" href="{{ item.link }}" rel="noopener">Buy<span class="visually-hidden"> {{ item.name }}</span></a>
+    {% else %}
+    <span class="btn" aria-disabled="true">Coming soon</span>
+    {% endif %}
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}

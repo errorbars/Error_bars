@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+title: Contact
+navKey: contact
+permalink: /contact/
+description: Questions, corrections or article pitches.
+---
+<section class="page-banner on-dark">
+  <div class="wrap">
+    <h1>Contact</h1>
+    <p>Questions, corrections, or an article you want to write. We read everything.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact__grid">
+    <div class="contact__info">
+      <div>
+        <h2>Email</h2>
+        <p>The quickest way to reach the editors.</p>
+        <a class="text-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+      <div id="pitch">
+        <h2>Pitch an article</h2>
+        <p>Tell us the idea in two or three sentences, which subject it fits, and why it's interesting. Pick "Article pitch" in the form.</p>
+      </div>
+      <div>
+        <h2>Follow</h2>
+        <div class="contact__social">
+          {%- for link in site.social %}
+          <a class="text-link" href="{{ link.url }}" rel="noopener">{{ link.label }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+
+    <form class="form" action="https://formspree.io/f/{{ site.formspreeId }}" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div>
+        <label for="topic">What's this about?</label>
+        <select id="topic" name="topic">
+          <option>General question</option>
+          <option>Article pitch</option>
+          <option>Correction</option>
+          <option>Shop order</option>
+        </select>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button class="btn" type="submit">Send message</button>
+      <p class="form__hint">We usually reply within a few days.</p>
+    </form>
+  </div>
+</section>

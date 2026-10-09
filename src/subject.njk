@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: subjects
+  size: 1
+  alias: s
+permalink: "/{{ s.slug }}/"
+eleventyComputed:
+  title: "{{ s.name }}"
+  description: "{{ s.intro }}"
+---
+{%- from "partials/cards.njk" import card with context -%}
+{%- set posts = collections.posts | bySubject(s.slug) -%}
+<div style="--subject: {{ s.color }}; --subject-ink: {{ s.ink }};">
+
+  <section class="subject-hero">
+    <img class="subject-hero__img" src="{{ s.image }}" alt="" width="2000" height="900" fetchpriority="high">
+    <div class="subject-hero__text">
+      <div class="wrap">
+        <h1>{{ s.name }}</h1>
+        <p class="subject-hero__tagline">{{ s.tagline }}</p>
+        <p class="subject-hero__intro">{{ s.intro }}</p>
+      </div>
+    </div>
+  </section>
+  <div class="subject-hero__bar"></div>
+
+  <section class="section">
+    <div class="wrap">
+      {% if posts.length %}
+      {%- set lead = posts[0] %}
+      <article class="lead">
+        <a href="{{ lead.url }}">
+          <img class="lead__img" src="{{ lead.data.image }}" alt="{{ lead.data.imageAlt }}" width="1600" height="1000">
+        </a>
+        <div>
+          <time class="lead__date" datetime="{{ lead.date | isoDate }}">{{ lead.date | readableDate }}</time>
+          <a href="{{ lead.url }}"><h2 class="lead__title">{{ lead.data.title }}</h2></a>
+          {% if lead.data.dek %}<p class="lead__dek">{{ lead.data.dek }}</p>{% endif %}
+          <a class="card__read" href="{{ lead.url }}">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>
+            Read<span class="visually-hidden"> {{ lead.data.title }}</span>
+          </a>
+        </div>
+      </article>
+
+      {% if posts.length > 1 %}
+      <h2 class="stripe-title" style="margin-bottom: 28px;">More {{ s.name | lower }} stories</h2>
+      <div class="grid-3">
+        {%- for p in posts | without(lead.url) %}{{ card(p, "plain", true) }}{% endfor %}
+      </div>
+      {% endif %}
+
+      {% else %}
+      <div class="empty">
+        <h2>No {{ s.name | lower }} stories yet</h2>
+        <p>New articles are on the way. Want to write the first one?</p>
+        <p style="margin-top: 20px;"><a class="btn" href="/contact/#pitch">Pitch an article</a></p>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</div>

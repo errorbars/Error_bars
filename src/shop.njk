@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: Shop
+navKey: shop
+permalink: /shop/
+description: Pins, tees, stickers and notebooks for people who read footnotes for fun.
+---
+{%- from "partials/cards.njk" import product with context -%}
+<section class="page-banner on-dark">
+  <div class="wrap">
+    <h1>Shop</h1>
+    <p>Small things for people who read footnotes for fun. Every order helps keep {{ site.name }} free to read.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="products">
+      {%- for item in merch %}{{ product(item) }}{% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<footer class="site-footer on-dark">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <a class="logo" href="/">
+          <span class="logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          {{ site.name }}
+        </a>
+        <p class="site-footer__tagline">{{ site.tagline }}</p>
+      </div>
+      <div>
+        <h2>Subjects</h2>
+        <ul>
+          {%- for sub in subjects %}
+          <li><a href="/{{ sub.slug }}/">{{ sub.name }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2>{{ site.name }}</h2>
+        <ul>
+          <li><a href="/shop/">Shop</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/contact/#pitch">Write for us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Follow</h2>
+        <ul>
+          {%- for link in site.social %}
+          <li><a href="{{ link.url }}" rel="noopener">{{ link.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__base">© {{ site.year }} {{ site.name }}. Articles belong to their authors.</p>
+  </div>
+</footer>

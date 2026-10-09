@@ -1,0 +1,12 @@
+{
+  "name": "Field Notes",
+  "tagline": "Physics, math, chemistry and biology, written by people who like this stuff.",
+  "description": "A small magazine of science articles on physics, math, chemistry and biology.",
+  "email": "hello@yoursite.com",
+  "formspreeId": "your-form-id",
+  "year": 2026,
+  "social": [
+    { "label": "Instagram", "url": "https://instagram.com/" },
+    { "label": "YouTube", "url": "https://youtube.com/" }
+  ]
+}

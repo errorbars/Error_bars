@@ -1,0 +1,17 @@
+{
+  "name": "field-notes",
+  "version": "1.0.0",
+  "description": "A magazine-style science articles site built with Eleventy",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "katex": "^0.19.0",
+    "markdown-it-texmath": "^1.0.0"
+  },
+  "private": true,
+  "type": "module"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Orbit Enamel Pin",
+    "price": "₹349",
+    "description": "Hard enamel, gold plating, rubber clasp. Small enough for a lab coat.",
+    "image": "/images/merch/pin.jpg",
+    "link": ""
+  },
+  {
+    "name": "Right Triangle Tee",
+    "price": "₹799",
+    "description": "Heavyweight cotton, one quiet proof printed on the back.",
+    "image": "/images/merch/tee.jpg",
+    "link": ""
+  },
+  {
+    "name": "Molecule Sticker Pack",
+    "price": "₹199",
+    "description": "Eight matte vinyl stickers. Laptop-safe, water-resistant.",
+    "image": "/images/merch/stickers.jpg",
+    "link": ""
+  },
+  {
+    "name": "Field Notebook",
+    "price": "₹449",
+    "description": "A5, dot grid, 120 pages. Lies flat for sketching diagrams.",
+    "image": "/images/merch/notebook.jpg",
+    "link": ""
+  }
+]

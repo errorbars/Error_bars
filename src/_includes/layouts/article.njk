@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/cards.njk" import card with context -%}
+{%- set sub = subject | subject -%}
+<article style="--subject: {{ sub.color }}; --subject-ink: {{ sub.ink }};">
+  <header class="article__head">
+    <a class="kicker" href="/{{ sub.slug }}/">{{ sub.name }}</a>
+    <h1 class="article__title">{{ title }}</h1>
+    {% if dek %}<p class="article__dek">{{ dek }}</p>{% endif %}
+    <div class="article__meta">
+      <span class="article__author">By {{ author or site.name }}</span>
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+      <span>{{ content | readingTime }}</span>
+    </div>
+  </header>
+
+  <figure class="article__hero">
+    <img src="{{ image }}" alt="{{ imageAlt }}" width="1600" height="1000" fetchpriority="high">
+    {% if imageCaption or imageCredit %}
+    <figcaption>{{ imageCaption }}{% if imageCredit %}<span class="credit">{{ imageCredit }}</span>{% endif %}</figcaption>
+    {% endif %}
+  </figure>
+
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+</article>
+
+{%- set more = collections.posts | related(page.url, subject, 3) %}
+{% if more.length %}
+<section class="more on-dark" aria-labelledby="more-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="stripe-title" id="more-title">Keep reading</h2>
+      <a class="text-link" href="/{{ sub.slug }}/">All {{ sub.name | lower }} stories</a>
+    </div>
+    <div class="grid-3">
+      {%- for p in more %}{{ card(p, "dark") }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

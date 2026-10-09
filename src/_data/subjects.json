@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "physics",
+    "name": "Physics",
+    "color": "#FF7A45",
+    "ink": "#C2410C",
+    "tagline": "Forces, fields, and everything in motion.",
+    "intro": "Mechanics, light, relativity and the occasional thought experiment, from falling apples to collapsing stars.",
+    "image": "/images/subjects/physics.jpg"
+  },
+  {
+    "slug": "math",
+    "name": "Math",
+    "color": "#F2C230",
+    "ink": "#8A6100",
+    "tagline": "Proofs, patterns, and the logic underneath everything.",
+    "intro": "Ideas that hold every other science together, explained with pictures before symbols wherever we can.",
+    "image": "/images/subjects/math.jpg"
+  },
+  {
+    "slug": "chemistry",
+    "name": "Chemistry",
+    "color": "#A98BFF",
+    "ink": "#6D3FD6",
+    "tagline": "Bonds, reactions, and why matter behaves the way it does.",
+    "intro": "What atoms want, what they do to get it, and how that shapes everything from table salt to ice.",
+    "image": "/images/subjects/chemistry.jpg"
+  },
+  {
+    "slug": "biology",
+    "name": "Biology",
+    "color": "#3FD19A",
+    "ink": "#0F7A55",
+    "tagline": "Cells, genes, and the machinery of living things.",
+    "intro": "How life copies itself, powers itself, and occasionally swallows a bacterium and keeps it for two billion years.",
+    "image": "/images/subjects/biology.jpg"
+  }
+]

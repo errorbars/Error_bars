@@ -1,0 +1,121 @@
+---
+layout: layouts/base.njk
+description: A small magazine of science articles on physics, math, chemistry and biology.
+---
+{%- from "partials/cards.njk" import card, product with context -%}
+{%- set home = collections.posts | homeLayout -%}
+{%- set hero = home.hero -%}
+<h1 class="visually-hidden">{{ site.name }}: {{ site.tagline }}</h1>
+
+{% if hero %}
+{%- set hs = hero.data.subject | subject -%}
+<section class="front on-dark" aria-label="Top stories">
+  <div class="wrap front__grid">
+
+    <div class="front__feature">
+      <article class="hero" style="--subject: {{ hs.color }};">
+        <a href="{{ hero.url }}">
+          <img class="hero__img" src="{{ hero.data.image }}" alt="{{ hero.data.imageAlt }}" width="1600" height="1000" fetchpriority="high">
+          <div class="hero__text">
+            <p class="kicker">{{ hs.name }}</p>
+            <h2 class="hero__title">{{ hero.data.title }}</h2>
+            {% if hero.data.dek %}<p class="hero__dek">{{ hero.data.dek }}</p>{% endif %}
+          </div>
+        </a>
+      </article>
+
+      {% if home.cards.length %}
+      <div class="front__cards">
+        {%- for p in home.cards %}{{ card(p, "light", true) }}{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    {% if home.latest.length %}
+    <div class="front__latest">
+      <h2 class="latest__title">Latest<br>stories</h2>
+      <ul class="latest__list">
+        {%- for p in home.latest %}
+        {%- set ps = p.data.subject | subject %}
+        <li class="latest__item" style="--subject: {{ ps.color }};">
+          <a href="{{ p.url }}">
+            <img class="latest__thumb" src="{{ p.data.image }}" alt="" width="160" height="160" loading="lazy">
+            <div>
+              <p class="kicker">{{ ps.name }}</p>
+              <h3 class="latest__headline">{{ p.data.title }}</h3>
+            </div>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}
+
+<section class="section" aria-labelledby="subjects-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="stripe-title" id="subjects-title">Subjects</h2>
+    </div>
+    <ul class="tiles">
+      {%- for sub in subjects %}
+      {%- set count = (collections.posts | bySubject(sub.slug)).length %}
+      <li class="tile" style="--subject: {{ sub.color }};">
+        <a href="/{{ sub.slug }}/">
+          <img src="{{ sub.image }}" alt="" width="2000" height="900" loading="lazy">
+          <div class="tile__text">
+            <h3 class="tile__name">{{ sub.name }}</h3>
+            <p class="tile__intro">{{ sub.tagline }}</p>
+            <p class="tile__count">{{ count }} {{ "story" if count == 1 else "stories" }}</p>
+          </div>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section band-mist" aria-label="Stories by subject">
+  <div class="wrap">
+    {%- for sub in subjects %}
+    {%- set posts = collections.posts | bySubject(sub.slug) | limit(3) %}
+    {% if posts.length %}
+    <div class="subject-row" style="--subject: {{ sub.color }};">
+      <div class="section__head">
+        <h2 class="subject-row__title">{{ sub.name }}</h2>
+        <a class="text-link" href="/{{ sub.slug }}/">All {{ sub.name | lower }} stories</a>
+      </div>
+      <div class="grid-3">
+        {%- for p in posts %}{{ card(p, "light", true) }}{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section on-dark" aria-labelledby="contribute-title">
+  <div class="wrap contribute__grid">
+    <img class="contribute__img" src="/images/site/banner.jpg" alt="" width="2000" height="900" loading="lazy">
+    <div class="contribute__text">
+      <h2 id="contribute-title">Explained something well? Publish it here.</h2>
+      <p>{{ site.name }} is written by a small group of friends. If you have an idea you can explain clearly, send us a pitch and we'll help you shape it into an article.</p>
+      <a class="btn btn--light" href="/contact/#pitch">Pitch an article</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="shop-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="stripe-title" id="shop-title">From the shop</h2>
+      <a class="text-link" href="/shop/">Visit the shop</a>
+    </div>
+    <div class="products products--compact">
+      {%- for item in merch | limit(4) %}{{ product(item, true) }}{% endfor %}
+    </div>
+  </div>
+</section>
