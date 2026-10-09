@@ -2,7 +2,7 @@
 title: "Why ice floats when most solids sink"
 dek: "Hydrogen bonds lock frozen water into an open, roomy lattice. That small quirk is why lakes freeze from the top down."
 subject: chemistry
-author: Field Notes
+author: Error Bars
 date: 2026-09-30
 image: /images/articles/chemistry-ice-floats.jpg
 imageAlt: "A hexagonal lattice glowing violet against a dark background"

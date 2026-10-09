@@ -2,7 +2,7 @@
 title: "Why atoms bond at all"
 dek: "Bonding is about reaching lower energy. Whether atoms trade electrons or share them depends on how hard each one pulls."
 subject: chemistry
-author: Field Notes
+author: Error Bars
 date: 2026-09-21
 image: /images/articles/chemistry-bonds.jpg
 imageAlt: "A violet lattice of hexagons connected at glowing points"

@@ -2,7 +2,7 @@
 title: "Why E = mc², actually"
 dek: "Mass and energy turn out to be the same thing measured in different units. Here is where the most famous equation in physics comes from."
 subject: physics
-author: Field Notes
+author: Error Bars
 date: 2026-10-08
 featured: true
 image: /images/articles/physics-emc2.jpg

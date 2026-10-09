@@ -2,7 +2,7 @@
 title: "The Pythagorean theorem, proven without words"
 dek: "Rearrange four identical triangles inside a square and the theorem falls out on its own, no algebra required."
 subject: math
-author: Field Notes
+author: Error Bars
 date: 2026-09-18
 image: /images/articles/math-pythagoras.jpg
 imageAlt: "A glowing right triangle and concentric circles on a grid"

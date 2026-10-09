@@ -1,4 +1,4 @@
-# Field Notes
+# Error Bars
 
 A magazine-style website for science articles on physics, math, chemistry and biology, with a shop page and a contact page. Built with [Eleventy](https://www.11ty.dev/) and published free on GitHub Pages.
 

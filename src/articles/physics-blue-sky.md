@@ -2,7 +2,7 @@
 title: "Why the sky is blue, and sunsets aren't"
 dek: "Air molecules scatter short wavelengths far more strongly than long ones. The same rule explains both the noon sky and the red evening."
 subject: physics
-author: Field Notes
+author: Error Bars
 date: 2026-10-06
 image: /images/articles/physics-blue-sky.jpg
 imageAlt: "Scattered points of light across a dark sky"

@@ -2,7 +2,7 @@
 title: "Why mitochondria have their own DNA"
 dek: "The power stations in your cells were once free-living bacteria. They still carry a small piece of their old genome."
 subject: biology
-author: Field Notes
+author: Error Bars
 date: 2026-10-02
 image: /images/articles/biology-mitochondria.jpg
 imageAlt: "Glowing green cell shapes drifting among soft circles of light"

@@ -2,7 +2,7 @@
 title: "Why the primes never run out"
 dek: "Euclid's proof is more than two thousand years old and still fits in a paragraph. It also has a twist most people get wrong."
 subject: math
-author: Field Notes
+author: Error Bars
 date: 2026-10-04
 image: /images/articles/math-infinite-primes.jpg
 imageAlt: "Concentric golden circles and a spiral on a dark grid"

@@ -2,7 +2,7 @@
 title: "Yes, 0.999… really equals 1"
 dek: "It feels like it should fall just short. Three short arguments show there is no gap at all."
 subject: math
-author: Field Notes
+author: Error Bars
 date: 2026-09-27
 image: /images/articles/math-point-nine.jpg
 imageAlt: "Golden arcs spiralling inward on a dark grid"

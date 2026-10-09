@@ -2,7 +2,7 @@
 title: "How DNA copies itself, three billion letters at a time"
 dek: "The double helix carries the instructions for its own duplication. A strict pairing rule does most of the work."
 subject: biology
-author: Field Notes
+author: Error Bars
 date: 2026-09-24
 image: /images/articles/biology-dna-copying.jpg
 imageAlt: "Soft green cells and blurred spheres of light"
